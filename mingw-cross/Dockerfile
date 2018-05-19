@@ -10,8 +10,7 @@ USER builder
 RUN mkdir -p /home/builder/mingw
 COPY x86_64-w64-mingw32.config /home/builder/mingw/.config
 WORKDIR /home/builder/mingw
-RUN ct-ng build
+RUN ct-ng build && cd .. && rm -rf mingw
 WORKDIR /home/builder
-RUN rm -rf mingw
 RUN  echo "export PATH=/home/builder/x-tools/x86_64-w64-mingw32/bin:$PATH" >> .bashrc
 
