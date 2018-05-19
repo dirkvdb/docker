@@ -1,3 +1,3 @@
 # docker
 
-Some usefull docker images containing toolchains
+Some useful docker images containing toolchains
