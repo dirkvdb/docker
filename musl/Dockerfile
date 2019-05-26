@@ -13,6 +13,7 @@ WORKDIR /home/builder/mingw
 RUN ct-ng x86_64-multilib-linux-musl
 RUN echo "CT_CC_GCC_LIBGOMP=y" >> .config
 RUN echo "CT_CC_GCC_LIBQUADMATH=y" >> .config
+RUN cat .config
 RUN ct-ng build && cd .. && rm -rf mingw
 WORKDIR /home/builder
 RUN  echo "export PATH=/home/builder/x-tools/x86_64-multilib-linux-musl/bin:$PATH" >> .bashrc
